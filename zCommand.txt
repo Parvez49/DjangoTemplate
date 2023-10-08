@@ -1,0 +1,13 @@
+docker build .   
+docker-compose build
+
+
+docker-compose run --rm projectname sh -c "flake8"
+docker-compose run --rm projectname sh -c "django-admin startproject ProjectName ."
+docker-compose run --rm projectname sh -c "python manage.py startapp app"
+
+docker-compose up    # start service
+
+# add new packages or dependencies
+docker-compose down
+docker-compose build
